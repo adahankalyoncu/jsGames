@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Mind</title>
+    <script lang="javascript" src="common.js"></script>
+    <script lang="javascript" src="mm.js"></script>        
+    <script lang="javascript" src="https://code.createjs.com/1.0.0/createjs.min.js"></script>     
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body style="height: 100vh;">
+    <audio loop id="bg-music">
+      <source src="audio/chase.mp3" type="audio/mpeg">
+    </audio>
+    <audio loop id="bg-over">
+      <source src="audio/overbg.mp3" type="audio/mpeg">
+    </audio>
+    <audio loop id="bg-win">
+      <source src="audio/winner.ogg" type="audio/ogg">
+    </audio>
+    <audio id="bg-well">
+      <source src="audio/WellDone.ogg" type="audio/ogg">
+    </audio>
+    <audio id="bg-over-2">
+      <source src="audio/GameOver.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="bg-intro" autoplay>
+      <source src="audio/intro.mp3" type="audio/mpeg">
+    </audio>
+
+
+    <div id="settings" style="display: flex; justify-content: center;flex-direction: column; text-align: center; height: 100%;">
+
+        <h1 id="label">Choose a level: </h1>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;" id="level">
+          <div onclick="createCards(6)" class="card">
+            <p>Baby</p>
+          </div>
+
+          <div onclick="createCards(8)" class="card">
+            <p>Toddler</p>
+          </div>
+
+          <div onclick="createCards(10)" class="card">
+            <p>Kids</p>
+          </div>
+
+          <div onclick="createCards(12)" class="card">
+            <p>Adults</p>
+          </div>
+
+          <div onclick="createCards(16)" class="card">
+            <p>Genius</p>
+          </div>
+
+          <div onclick="createCards(20)" class="card">
+            <p>Superhero</p>
+          </div>
+
+          <div style="margin: 2em;">
+            <a href="mmc.html" class="card" style="padding : 1.65em 3em 1.65em 3em; text-decoration: none;">CREDITS</a>
+          </div>
+
+          <div style="margin: 2em;">
+            <a href="index.html" class="card" style="padding : 1.65em 4em 1.65em 4em; text-decoration: none;">Back</a>
+          </div>
+
+        </div>   
+
+    </div>
+
+    <div  id="youWin" style="display: none; flex-direction: column;
+    justify-content: center; height: 100%; text-align: center;">
+      <div id="basic">
+        <h2 style="font-size:500%; color: rgb(7, 97, 22); text-align: center;"><strong>YOU WIN!</strong></h2>
+      </div>
+  
+  
+        <div id="scorePanel" style="display: none; margin: 2em 0;">
+          <strong style="font-size: 400%;">Score: </strong><span id="gameScore" style="font-size: 400%;"></span>
+        </div>
+  
+        <div id="playAgain" style="display: none;">
+          <button onclick="location.reload()" style="font-size: 150%;">play again</button>
+        </div>
+
+    </div>
+
+
+    <div id="gameOver" style="display: none; flex-direction: column;
+     justify-content: center; height: 100%; text-align: center;">
+      <div>
+        <h1 style="font-size:500%; color: red;"><strong>GAME OVER!</strong></h1>
+
+        <button id="tryAgain" style="font-size: 150%;">try again</button>
+      </div>
+    </div>
+
+    <div id="play" style="display: none; flex-direction: column; justify-content: center; text-align: center;">
+      <div id="cont" style="display:none"></div>
+    </div>
+    
+  </body>
+</html>
